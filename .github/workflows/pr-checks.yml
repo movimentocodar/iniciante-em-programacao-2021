@@ -1,0 +1,23 @@
+name: Tests
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  pr-checks:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    - name: Cache
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+        cache: 'npm'
+    - name: Install
+      run: npm ci
+    - name: Test
+      run: npx jest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
