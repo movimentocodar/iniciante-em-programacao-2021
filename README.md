@@ -29,7 +29,9 @@ Os desafios estão na pasta `src`. São dez arquivos `.js`, cada um com um desaf
 
 Faça a implementação das funções conforme as regras descritas no comentário de cada arquivo.
 
-Ao terminar crie um `Pull Request` com a sua solução.
+Ao terminar crie um `Pull Request` com a sua solução. Para isso clique em `Contribute` e `Open Pull Request`. Depois basta confirmar a operação. 
+
+![Criando PR](https://user-images.githubusercontent.com/6104963/125391895-911cd300-e37b-11eb-90d9-5b92cd8e5445.PNG)
 
 ## Créditos
 
