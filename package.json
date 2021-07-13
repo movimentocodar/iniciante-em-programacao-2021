@@ -1,0 +1,24 @@
+{
+  "name": "iniciante-em-programacao-2021",
+  "description": "Desafio do módulo Iniciante em Programação do Movimento Codar 2021. Pratique lógica de programação com Javascript.",
+  "author": "Movimento Codar",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movimentocodar/iniciante-em-programacao-2021.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
