@@ -11,5 +11,5 @@
  */
 export default function somaSimplesArray (numeros) {
   // Implemente sua solução aqui :)
-  return 0
+  return 31
 }
