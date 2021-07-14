@@ -9,9 +9,14 @@
  * 1 mes(es)
  * 5 dia(s)
  */
-export default function idadeEmDias (idade) {
+export default function idadeEmDias(idade) {
   // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+
+  let anos = Math.floor(idade / 365)
+  let meses = Math.floor((idade % 365) / 30)
+  let dias = (idade % 365) % 30
+
+  return `${anos} ano(s)
+${meses} mes(es)
+${dias} dia(s)`
 }
