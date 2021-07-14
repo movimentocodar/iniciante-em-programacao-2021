@@ -10,6 +10,9 @@
  * - O resultado retornado deve ser 31
  */
 export default function somaSimplesArray (numeros) {
-  // Implemente sua solução aqui :)
-  return 0
+  let soma = 0;
+  for(let n = 0; n < numeros.length; n++){
+    soma += numeros[n];
+  }
+  return soma;
 }
