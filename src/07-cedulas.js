@@ -18,37 +18,13 @@
  * 1 nota(s) de R$ 1,00
  */
 export default function cedulas (valor) {
-  let temp = valor;
+  let aux = valor
   let notas = [0,0,0,0,0,0,0];
-
-  while(temp){
-    if(temp >= 100){
-      notas[0]++;
-      temp -= 100;
-    }
-    else if(temp >= 50){
-      notas[1]++;
-      temp -= 50;
-    }
-    else if(temp >= 20){
-      notas[2]++;
-      temp -= 20;
-    }
-    else if(temp >= 10){
-      notas[3]++;
-      temp -= 10;
-    }
-    else if(temp >= 5){
-      notas[4]++;
-      temp -= 5;
-    }
-    else if(temp >= 2){
-      notas[5]++;
-      temp -= 2;
-    }
-    else if(temp >= 1){
-      notas[6]++;
-      temp -= 1;
+  let dinheiros = [100,50,20,10,5,2,1]
+  for(let c = 0; c < 7; c++){
+    if(aux >= dinheiros[c]){
+      notas[c] = Math.floor(aux/dinheiros[c]);
+      aux -= notas[c] * dinheiros[c];
     }
   }
 
