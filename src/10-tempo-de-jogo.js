@@ -7,6 +7,7 @@
  * - Para horaInicial = 7, minutoInicial = 8, horaFinal = 9 e minutoFinal = 10
  * - Deve retornar 'O JOGO DUROU 2 HORA(S) E 2 MINUTO(S)'
  */
+ export default function tempoDeJogo (horaInicial, minutoInicial, horaFinal, minutoFinal) {
 
  var temp, horas = [];
  for(let a of lines){
@@ -30,3 +31,5 @@
  }
  console.log("O JOGO DUROU" + qtdHoras +  "HORA(S)");
  
+ return 'O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)'
+}
