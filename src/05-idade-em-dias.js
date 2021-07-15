@@ -10,8 +10,8 @@
  * 5 dia(s)
  */
 export default function idadeEmDias (idade) {
-  // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+  let ano = Math.round(idade/365);
+  let mes = Math.round((idade-365*ano)/30)
+  let dia = Math.round((idade-365*ano)-30*mes)
+  return String( ano + ' ano(s)\n' + mes + ' mes(es)\n' + dia + ' dia(s)') 
 }
