@@ -26,6 +26,30 @@
  * FALHA
  */
 export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
+
+    let result = []
+        for (let i=0;i<placas.length;i++) {
+            if (placas[i].length === 8 && placas[i] == placas[i].toUpperCase()){
+                if (placas[i][7] == 1 || placas[i][7] == 2) {
+                    return `SEGUNDA\n`
+                } 
+                else if (placas[i][7] == 3 || placas[i][7] == 4) {
+                    return `TERÇA\n`
+                } 
+                else if (placas[i][7] == 5 || placas[i][7] == 6) {
+                    return `QUARTA\n`
+                } 
+                else if (placas[i][7] == 7 || placas[i][7] == 8) {
+                    return `QUINTA\n`
+                } 
+                else if (placas[i][7] == 9 || placas[i][7] == 0) {
+                    return `SEXTA\n`
+                } else {
+                    return `FALHA\n`
+                }
+            }
+            else {
+                return `FALHA\n`
+            }
+        }
 }
