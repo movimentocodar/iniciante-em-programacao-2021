@@ -11,5 +11,6 @@
  */
 export default function somaSimplesArray (numeros) {
   // Implemente sua solução aqui :)
-  return 0
+  const total = numeros.reduce((total, elementoI) => total + elementoI);
+  return total;
 }

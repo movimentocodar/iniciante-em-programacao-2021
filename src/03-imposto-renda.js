@@ -23,5 +23,35 @@
  */
 export default function impostoRenda (valor) {
   // Implemente sua solução aqui :)
-  return 'R$ 00.00'
+ let total = 0;
+ let parcial1 = 0;
+ let parcial2 = 0
+ let parcial3 = 0
+ let valor8 = 0;
+ let valor18 = 0;
+ let valor28 = 0;
+
+ if(valor <= 2000.00){
+   return `Isento`;
+ }else if(valor > 2000.01 && valor <= 3000.00){
+   valor8 = (valor - 2000) * 0.08;
+ }else if(valor > 3000.01 && valor <= 4500.00){
+   parcial1 = valor - 3000.00;
+
+   valor18 = parcial1 * 0.18;
+   valor8 = (valor - parcial1 - 2000) * 0.08;
+
+   total = valor8 + valor18;
+ }else{
+   parcial1 = valor - 4500;
+   parcial2 = valor - parcial1 - 3000;
+   parcial3 = valor - parcial1 - parcial2 - 2000;
+
+   valor28 = parcial1 * 0.28;
+   valor18 = parcial2 * 0.18;
+   valor8 = parcial3 * 0.08;
+
+   total = valor8 + valor18 + valor28;
+ }
+  return 'R$ ' + total.toFixed(2);
 }

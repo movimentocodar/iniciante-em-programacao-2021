@@ -26,6 +26,25 @@
  * FALHA
  */
 export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
+  let texto = ``;
+  let ultimoNumero;
+  for(let i = 0; i < placas.length; i++){
+    if(placas[i].match('^[A-Z]{3}-[0-9]{4}$')){
+      ultimoNumero = placas[i].substr(7,8);
+      if(ultimoNumero == 1 || ultimoNumero == 2){
+        texto += `SEGUNDA\n`;
+      }else if(ultimoNumero == 3 || ultimoNumero == 4){
+        texto += `TERÇA\n`;
+      }else if(ultimoNumero == 5 || ultimoNumero == 6){
+        texto += `QUARTA\n`;
+      }else if(ultimoNumero == 7 || ultimoNumero == 8){
+        texto += `QUINTA\n`;
+      }else if(ultimoNumero == 9 || ultimoNumero == 0){
+        texto += `SEXTA\n`;
+      }
+    }else{
+      texto += `FALHA\n`;
+    }
+  }
+  return texto.replace(/\n*$/, "");;
 }

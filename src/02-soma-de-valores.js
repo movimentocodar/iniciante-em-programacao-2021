@@ -8,5 +8,5 @@
  */
 export default function somaValores (a, b) {
   // Implemente sua solução aqui :)
-  return 'X = 0'
+  return 'X = '+ parseFloat(a + b);
 }
