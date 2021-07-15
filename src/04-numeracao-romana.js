@@ -10,7 +10,4 @@
  * - Dado numero = 666
  * - Deve retornar 'DCLXVI'
  */
-export default function numeracaoRomana (numero) {
-  // Implemente sua solução aqui :)
-  return 'I'
-}
+

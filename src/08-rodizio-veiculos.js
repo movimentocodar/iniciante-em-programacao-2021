@@ -25,7 +25,107 @@
  * SEXTA
  * FALHA
  */
-export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
-}
+
+ 
+
+ var dinheiro = parseFloat(lines[0]); var notas = parseFloat(lines[1]);
+ 
+   console.log("NOTAS:\n");
+ 
+   while (dinheiro >= 100) {
+     dinheiro = dinheiro - 100;
+     notas++;
+   }
+   console.log(notas + "nota(s) de R$ 100.00");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 50) {
+     dinheiro = dinheiro - 50;
+     notas++;
+   }
+   console.log(notas + "nota(s) de R$ 50.00");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 20) {
+     dinheiro = dinheiro - 20;
+     notas++;
+   }
+   console.log(notas + "nota(s) de R$ 20.00");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 10) {
+     dinheiro = dinheiro - 10;
+     notas++;
+   }
+   console.log(notas + "nota(s) de R$ 10.00");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 5) {
+     dinheiro = dinheiro - 5;
+     notas++;
+   }
+   console.log(notas + "nota(s) de R$ 5.00");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 2) {
+     dinheiro = dinheiro - 2;
+     notas++;
+   }
+   console.log(notas + "nota(s) de R$ 2.00");
+ 
+   notas = 0;
+ 
+   console.log("MOEDAS:\n");
+ 
+   while (dinheiro >= 1) {
+     dinheiro = dinheiro - 1;
+     notas++;
+   }
+   console.log(notas + "moeda(s) de R$ 1.00");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 0.5) {
+     dinheiro = dinheiro - 0.5;
+     notas++;
+   }
+   console.log(notas + "moeda(s) de R$ 0.50");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 0.25) {
+     dinheiro = dinheiro - 0.25;
+     notas++;
+   }
+   console.log(notas + "moeda(s) de R$ 0.25");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 0.10) {
+     dinheiro = dinheiro - 0.10;
+     notas++;
+   }
+   console.log(notas + "moeda(s) de R$ 0.10");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 0.05) {
+     dinheiro = dinheiro - 0.05;
+     notas++;
+   }
+   console.log(notas + "moeda(s) de R$ 0.05");
+ 
+   notas = 0;
+ 
+   while (dinheiro >= 0.01) {
+     dinheiro = dinheiro - 0.01;
+     notas++;
+   }
+   console.log(notas + "moeda(s) de R$ 0.01");
+ 
+   notas = 0;

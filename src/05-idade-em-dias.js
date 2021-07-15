@@ -9,9 +9,19 @@
  * 1 mes(es)
  * 5 dia(s)
  */
-export default function idadeEmDias (idade) {
-  // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
-}
+
+let qtdDias = parseInt(input);
+
+let qtdAnos, qtdMeses;
+
+qtdAnos = parseInt(qtdDias / 365);
+qtdDias = qtdDias % 365;
+
+qtdMeses = parseInt(qtdDias / 30);
+qtdDias = qtdDias % 30;
+
+let resultado = $(qtdAnos); 
+$(qtdMeses);
+$(qtdDias);
+
+console.log(resultado);
