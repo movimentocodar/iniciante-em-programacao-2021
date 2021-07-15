@@ -7,7 +7,16 @@
  * - Para horaInicial = 7, minutoInicial = 8, horaFinal = 9 e minutoFinal = 10
  * - Deve retornar 'O JOGO DUROU 2 HORA(S) E 2 MINUTO(S)'
  */
-export default function tempoDeJogo (horaInicial, minutoInicial, horaFinal, minutoFinal) {
-  // Implemente sua solução aqui :)
-  return 'O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)'
+export default function tempoDeJogo(horaInicial, minutoInicial, horaFinal, minutoFinal) {
+  let rsltdHora = horaFinal - horaInicial;
+  let rsltdMinuto = minutoFinal - minutoInicial;
+
+  if (rsltdHora === 0 && rsltdMinuto === 0) {
+    rsltdHora = 24;
+  }
+  if (rsltdMinuto < 0) {
+    rsltdMinuto += 60;
+    rsltdHora--;
+  }
+  return 'O JOGO DUROU ' + rsltdHora + ' HORA(S) E ' + rsltdMinuto + ' MINUTO(S)';
 }
