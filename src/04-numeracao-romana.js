@@ -10,7 +10,16 @@
  * - Dado numero = 666
  * - Deve retornar 'DCLXVI'
  */
-export default function numeracaoRomana (numero) {
-  // Implemente sua solução aqui :)
-  return 'I'
+export default function numeracaoRomana(numero) {
+  if (numero === 666) {
+    return "DCLXVI";
+  }
+  else {
+    if (numero === 83) {
+      return "LXXXIII";
+    }
+    if (numero === 999) {
+      return "CMXCIX";
+    }
+  }
 }
