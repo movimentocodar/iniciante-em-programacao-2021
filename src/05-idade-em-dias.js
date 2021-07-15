@@ -10,8 +10,21 @@
  * 5 dia(s)
  */
 export default function idadeEmDias (idade) {
-  // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+const input = require("fs").readFileSync("stdin", "utf8");
+
+let qtdDias = parseInt(input);
+
+let qtdAnos, qtdMeses;
+
+qtdAnos = parseInt(qtdDias / 365);
+qtdDias = qtdDias % 365
+
+qtdMeses = parseInt(qtdDias / 30);
+qtdDias = qtdDias % 30;
+
+
+
+  return '${qtdAnos} ano(s)
+${qtdMeses} mes(es)
+${qtdDias} dia(s)';
 }

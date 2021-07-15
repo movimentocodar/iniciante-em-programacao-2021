@@ -8,6 +8,6 @@
  * - Deve retornar 'O JOGO DUROU 2 HORA(S) E 2 MINUTO(S)'
  */
 export default function tempoDeJogo (horaInicial, minutoInicial, horaFinal, minutoFinal) {
-  // Implemente sua solução aqui :)
+  Para horaInicial = 7, minutoInicial = 8, horaFinal = 9 e minutoFinal = 10
   return 'O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)'
 }

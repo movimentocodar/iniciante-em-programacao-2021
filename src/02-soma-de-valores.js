@@ -7,6 +7,12 @@
  * - O resultado retornado deve ser 'X = 4'
  */
 export default function somaValores (a, b) {
-  // Implemente sua solução aqui :)
-  return 'X = 0'
+var imput = require("fs").readFileSync("studin", "Utf8");
+var imput;
+var valores = input.split("\n");
+var a = parseInt(valores.shift());
+var b = parseInt(valores.shift());
+
+var soma = a + b;
+console.log("soma = " + soma);
 }
