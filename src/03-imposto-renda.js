@@ -21,7 +21,49 @@
  * - Se valor = 3002.00
  * - Deve retornar 'R$ 80.36' (8% sobre R$ 1000.00 + 18% sobre R$ 2.00. A faixa de 0 a 2000 é isenta)
  */
-export default function impostoRenda (valor) {
-  // Implemente sua solução aqui :)
-  return 'R$ 00.00'
+ var tetoFaixaIsenta = 2000;
+ var tetoFaixa8 = 3000;
+ var tetoFaixa18 = 4500;
+ 
+ export default function impostoRenda(valor){
+  var imposto;
+
+  if (valor <= tetoFaixaIsenta){
+    imposto = "Isento";
+  } else if (valor <= tetoFaixa8){
+    imposto = adicionarMoeda(calculoFaixa8(valor));
+  } else if (valor <= tetoFaixa18){
+    imposto = adicionarMoeda(calculoFaixa18(valor));
+  } else {
+    imposto = adicionarMoeda(calculoFaixa28(valor));
+  }
+
+  return imposto;
 }
+
+function calculoFaixa8(valor) {
+  if (valor <= tetoFaixa8) {
+    return ((valor - tetoFaixaIsenta) * 8) / 100;
+  }
+  else {
+    return ((tetoFaixa8 - tetoFaixaIsenta) * 8) / 100;
+  }
+}
+
+function calculoFaixa18(valor) {
+  if (valor <= tetoFaixa18) {
+    return (calculoFaixa8(valor) + (((valor - tetoFaixa8) * 18) / 100));
+  }
+  else {
+    return (calculoFaixa8(valor) + (((tetoFaixa18 - tetoFaixa8) * 18) / 100));
+  }
+}
+
+function calculoFaixa28(valor) {
+  return (calculoFaixa18(valor) + (((valor - tetoFaixa18) * 28) / 100));
+}
+
+function adicionarMoeda(quanto) {
+  return "R$ " + quanto.toFixed(2);
+}
+

@@ -26,6 +26,42 @@
  * FALHA
  */
 export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
+  var letras = /^[A-Z]+$/;
+  var numeros = /^[0-9]+$/;
+  var placasLength = placas.length;
+  var resultado = "";
+
+	for (var i = 0; i < placasLength; i++){
+		if (placas[i].length == 8 && placas[i].charAt(3) == "-"){
+			var placaConteudo = placas[i].split("-");
+			if (placaConteudo[0].match(letras)){
+				if (placaConteudo[1].match(numeros)){
+					if (placaConteudo[1].charAt(3) == "1" || placaConteudo[1].charAt(3) == "2" ){
+						placas[i] = "SEGUNDA";
+					} else if (placaConteudo[1].charAt(3) == "3" || placaConteudo[1].charAt(3) == "4" ){
+						placas[i] = "TERÇA";
+					} else if (placaConteudo[1].charAt(3) == "5" || placaConteudo[1].charAt(3) == "6" ){
+						placas[i] = "QUARTA";
+					} else if (placaConteudo[1].charAt(3) == "7" || placaConteudo[1].charAt(3) == "8" ){
+						placas[i] = "QUINTA";
+					} else {
+						placas[i] = "SEXTA";
+					}
+				} else {
+					placas[i] = "FALHA";			
+				}
+			} else {
+				placas[i] = "FALHA";			
+			}
+		} else {
+			placas[i] = "FALHA";
+		}
+	}
+  
+	for(var i = 0; i < placasLength; i++){
+		resultado += `${placas[i]}
+`
+	}
+	
+  return resultado;
 }
