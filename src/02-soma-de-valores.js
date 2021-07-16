@@ -8,5 +8,14 @@
  */
 export default function somaValores (a, b) {
   // Implemente sua solução aqui :)
+  var a = 3;
+  var b = 1;
+  
+  var soma = a + b;
+
+
+   
+  console.log ("x = " + soma);
+  
   return 'X = 0'
 }
