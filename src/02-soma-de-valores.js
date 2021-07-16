@@ -8,5 +8,9 @@
  */
 export default function somaValores (a, b) {
   // Implemente sua solução aqui :)
-  return 'X = 0'
+    var res = a+b;
+
+    return 'X = '+res;
+  //a implementação também pode ser feita com somente o retorno. Ex:. return 'X ='+(a+b);
 }
+
