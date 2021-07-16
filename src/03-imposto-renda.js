@@ -23,5 +23,38 @@
  */
 export default function impostoRenda (valor) {
   // Implemente sua solução aqui :)
-  return 'R$ 00.00'
+
+  var imposto = 0;
+  var aux =0;
+
+
+    if(valor>4500){
+
+        aux = valor - 4500;
+        imposto = 1000 *0.08 + 1500*0.18;
+        imposto+= aux *0.28;
+        parseFloat(imposto);
+
+
+    }else if(valor>3000){
+
+        aux = valor - 3000;
+        imposto = 1000 *0.08;
+        imposto+= aux *0.18;
+
+
+    }else if(valor>2000){
+        aux = valor - 2000;
+        imposto+= aux *0.08;
+    }
+    
+
+
+    if(imposto>0){
+      return 'R$ '+imposto;
+      
+    }else{
+      return 'Isento';
+    }
+  
 }
