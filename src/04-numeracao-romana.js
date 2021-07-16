@@ -11,6 +11,83 @@
  * - Deve retornar 'DCLXVI'
  */
 export default function numeracaoRomana (numero) {
-  // Implemente sua solução aqui :)
-  return 'I'
+
+  var n = numero;
+  var nRomanos = "";
+
+  var retorno = [n, nRomanos];
+
+  retorno = verifica900(n, nRomanos)
+  retorno = verificaNaoRepete(retorno, 500, "D");
+  retorno = verificaNaoRepete(retorno, 400, "CD");
+  retorno = verificaRepete(retorno, 100, "C");
+  retorno = verificaNaoRepete(retorno, 90, "XC");
+  retorno = verificaNaoRepete(retorno, 50, "L");
+  retorno = verificaNaoRepete(retorno, 40, "XL");
+  retorno = verificaRepete(retorno, 10, "X");
+  retorno = verificaNaoRepete(retorno, 9, "IX");
+  retorno = verificaNaoRepete(retorno, 5, "V");
+  retorno = verificaNaoRepete(retorno, 4, "IV");
+  retorno = verificaRepete(retorno, 1, "I");
+
+//-- RESULTADO//
+  document.write(retorno[1]);
+  document.write("<hr>");
+
 }
+
+numeracaoRomana(666);
+
+//------------------------------------------------------------------------------------------//
+
+function verifica900(n, nRomanos) {
+
+  if(n >= 900) {
+    var conta = n / 900;
+    var contaResto = n % 900;
+    
+    if (conta >= 1) {
+        var nRomanos = nRomanos + "CM";
+        n = contaResto;
+    } 
+  }
+  return [n, nRomanos]
+}
+
+function verificaRepete(retorno, inteiro, letra) {
+
+  var nRomanos = retorno[1];
+  var n = retorno[0];
+  
+  if(n >= inteiro) {
+    var conta = n / inteiro;
+    var contaResto = n % inteiro;
+    
+    if (conta >= 1) {
+      for(var contador = 1; contador <= conta; contador++){
+        var nRomanos = nRomanos + letra;
+        n = contaResto;
+      }
+    }
+  }
+  return [n, nRomanos];
+}
+
+function verificaNaoRepete(retorno, inteiro, letra) {
+
+  var nRomanos = retorno[1];
+  var n = retorno[0];
+  
+  if(n >= inteiro) {
+    var conta = n / inteiro;
+    var contaResto = n % inteiro;
+    
+    if (conta >= 1) {
+        var nRomanos = nRomanos + letra;
+        n = contaResto;
+    }
+}
+  return [n, nRomanos];
+}
+
+//------------------------------------------------------------------------------------------//

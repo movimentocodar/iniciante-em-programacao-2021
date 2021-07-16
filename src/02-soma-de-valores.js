@@ -7,6 +7,10 @@
  * - O resultado retornado deve ser 'X = 4'
  */
 export default function somaValores (a, b) {
-  // Implemente sua solução aqui :)
-  return 'X = 0'
+
+  var resultado = a + b;
+
+  return 'X = ' + resultado;
 }
+
+somaValores(3, 1);
