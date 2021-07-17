@@ -59,9 +59,8 @@ export default function rodizioVeiculos (placas) {
 	}
   
 	for(var i = 0; i < placasLength; i++){
-		resultado += `${placas[i]}
-`
-	}
-	
+		resultado += ((i + 1) < placas.length) ? placas[i] + "\n" : placas[i];
+	}	
+
   return resultado;
 }
