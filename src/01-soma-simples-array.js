@@ -10,6 +10,8 @@
  * - O resultado retornado deve ser 31
  */
 export default function somaSimplesArray (numeros) {
-  // Implemente sua solução aqui :)
-  return 0
+  return numeros.reduce((acc, num) => {
+    acc += num
+    return acc
+  }, 0)
 }

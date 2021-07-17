@@ -26,6 +26,25 @@
  * FALHA
  */
 export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
+  const REGEX_PLACA = /^[A-Z]{3}-[0-9]{4}$/
+  const diasPorFinalPlaca = {
+    SEGUNDA: [1, 2],
+    TERÇA: [3, 4],
+    QUARTA: [5, 6],
+    QUINTA: [7, 8],
+    SEXTA: [9, 0]
+  }
+
+  return placas.map(placa => {
+    const isValida = REGEX_PLACA.test(placa)
+    if (!isValida) return 'FALHA'
+
+    const digitoFinal = parseInt(placa.slice(-1))
+    const [dia] = Object
+      .entries(diasPorFinalPlaca)
+      .filter(([_, numeros]) => numeros.includes(digitoFinal))
+      .map(([dia]) => dia)
+
+    return dia
+  }).join('\n')
 }

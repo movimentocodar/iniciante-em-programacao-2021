@@ -22,6 +22,12 @@
  * - Deve retornar 'R$ 80.36' (8% sobre R$ 1000.00 + 18% sobre R$ 2.00. A faixa de 0 a 2000 é isenta)
  */
 export default function impostoRenda (valor) {
-  // Implemente sua solução aqui :)
-  return 'R$ 00.00'
+  if (valor <= 2000) return 'Isento'
+
+  let imposto = 0
+  if (valor > 4500) { imposto += (valor - 4500) * 0.28; valor = 4500 }
+  if (valor > 3000) { imposto += (valor - 3000) * 0.18; valor = 3000 }
+  if (valor > 2000) imposto += (valor - 2000) * 0.08
+
+  return `R$ ${imposto.toFixed(2)}`
 }

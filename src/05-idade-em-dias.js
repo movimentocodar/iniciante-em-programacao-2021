@@ -10,8 +10,10 @@
  * 5 dia(s)
  */
 export default function idadeEmDias (idade) {
-  // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+  const anos = Math.floor(idade / 365)
+  const meses = Math.floor((idade % 365) / 30)
+  const dias = idade % 365 % 30
+  return `${anos} ano(s)
+${meses} mes(es)
+${dias} dia(s)`
 }

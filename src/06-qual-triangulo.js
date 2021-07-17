@@ -13,7 +13,21 @@
  *
  */
 export default function qualTriangulo (lado1, lado2, lado3) {
-  // Implemente sua solução aqui :)
-  return `Valido-Tipo
-Retangulo: X`
+  const isValido = lado1 + lado2 > lado3 &&
+                    lado1 + lado3 > lado2 &&
+                    lado2 + lado3 > lado1
+
+  if (!isValido) return 'Invalido'
+
+  const tipo = lado1 === lado2 === lado3
+    ? 'Equilatero'
+    : lado1 === lado2 || lado1 === lado3 || lado2 === lado3
+      ? 'Isoceles'
+      : 'Escaleno'
+
+  // pitagoras hip² = c1² + c2²
+  const ladosOrdenados = [lado1, lado2, lado3].sort()
+  const isQuadrado = Math.pow(ladosOrdenados[0], 2) + Math.pow(ladosOrdenados[1], 2) === Math.pow(ladosOrdenados[2], 2)
+  return `Valido-${tipo}
+Retangulo: ${isQuadrado ? 'S' : 'N'}`
 }
