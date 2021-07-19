@@ -26,6 +26,56 @@
  * FALHA
  */
 export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
+  let rodizios = [];
+  for(let i = 0; i < placas.length; i++){
+    //verifica se a placa começa com letras
+    if(!isNaN(parseInt(placas[i][0])) || !isNaN(parseInt(placas[i][1])) || !isNaN(parseInt(placas[i][2]))){
+      rodizios.push('FALHA');
+    }
+    //verifica se as letras estão em maisculo
+    else if(placas[i][0].toUpperCase() != placas[i][0] || placas[i][1].toUpperCase() != placas[i][1] || placas[i][2].toUpperCase() != placas[i][2]){
+      rodizios.push('FALHA');
+    }
+    else if(placas[i][3] != "-"){
+      rodizios.push('FALHA');
+    }
+    //verifica se os ultimos 4 digitos são numeros
+    else if(isNaN(parseInt(placas[i][4])) || isNaN(parseInt(placas[i][5])) || isNaN(parseInt(placas[i][6])) || isNaN(parseInt(placas[i][7]))){
+      rodizios.push('FALHA');
+    }
+    else{
+
+      let ultiNum = parseInt(placas[i][7]);
+
+      switch(ultiNum){
+        case 1:
+        case 2:
+          rodizios.push('SEGUNDA');
+          break;
+        case 3:
+        case 4:
+          rodizios.push('TERÇA');
+          break;
+        case 5:
+        case 6:
+          rodizios.push('QUARTA');
+          break;
+        case 7:
+        case 8:
+          rodizios.push('QUINTA');
+          break;
+        case 9:
+        case 0:
+          rodizios.push('SEXTA');
+          break;
+      }
+    }
+  }
+
+  let resultado = "";
+  for(let c = 0; c < rodizios.length; c++){
+    resultado += rodizios[c] + (c + 1 < rodizios.length ? "\n":"");
+  }
+
+  return resultado;
 }

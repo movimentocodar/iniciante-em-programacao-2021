@@ -10,7 +10,21 @@
  * - Dado numero = 666
  * - Deve retornar 'DCLXVI'
  */
+ const nunsRomanos = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
+ const valRomanos = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
 export default function numeracaoRomana (numero) {
-  // Implemente sua solução aqui :)
-  return 'I'
+  let retornoRomano = "";
+  
+  let numRom = 0;
+  while(numero){
+    if(numero>= valRomanos[numRom]){
+      retornoRomano += nunsRomanos[numRom];
+      numero -= valRomanos[numRom];
+    }
+    else {
+      numRom++;
+    }
+  }
+
+  return retornoRomano;
 }

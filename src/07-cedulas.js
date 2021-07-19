@@ -18,13 +18,15 @@
  * 1 nota(s) de R$ 1,00
  */
 export default function cedulas (valor) {
-  // Implemente sua solução aqui :)
-  return `0
-0 nota(s) de R$ 100,00
-0 nota(s) de R$ 50,00
-0 nota(s) de R$ 20,00
-0 nota(s) de R$ 10,00
-0 nota(s) de R$ 5,00
-0 nota(s) de R$ 2,00
-0 nota(s) de R$ 1,00`
+  let aux = valor
+  let notas = [0,0,0,0,0,0,0];
+  let dinheiros = [100,50,20,10,5,2,1]
+  for(let c = 0; c < 7; c++){
+    if(aux >= dinheiros[c]){
+      notas[c] = Math.floor(aux/dinheiros[c]);
+      aux -= notas[c] * dinheiros[c];
+    }
+  }
+
+  return valor + "\n" + notas[0] + " nota(s) de R$ 100,00\n" + notas[1] + " nota(s) de R$ 50,00\n" + notas[2] + " nota(s) de R$ 20,00\n" + notas[3] + " nota(s) de R$ 10,00\n" + notas[4] +" nota(s) de R$ 5,00\n" + notas[5] +" nota(s) de R$ 2,00\n" + notas[6] +" nota(s) de R$ 1,00";
 }
