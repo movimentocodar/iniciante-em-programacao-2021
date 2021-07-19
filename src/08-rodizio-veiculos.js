@@ -27,5 +27,6 @@
  */
 export default function rodizioVeiculos (placas) {
   // Implemente sua solução aqui :)
+  
   return 'FALHA'
 }

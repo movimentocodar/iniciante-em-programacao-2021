@@ -11,7 +11,18 @@
  */
 export default function idadeEmDias (idade) {
   // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+
+var ano = 0;
+var mes = 0;
+var dia = 0;
+
+  ano = Math.trunc(idade/365);
+  mes = Math.trunc((idade%365)/30);
+  dia = Math.trunc((idade%365)%30); 
+
+
+
+return `${ano} ano(s)
+${mes} mes(es)
+${dia} dia(s)`
 }

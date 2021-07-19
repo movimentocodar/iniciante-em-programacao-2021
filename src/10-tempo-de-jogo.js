@@ -9,5 +9,32 @@
  */
 export default function tempoDeJogo (horaInicial, minutoInicial, horaFinal, minutoFinal) {
   // Implemente sua solução aqui :)
-  return 'O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)'
+  var hora =0;
+  var minuto =0;
+
+      
+       if(horaInicial<horaFinal){
+        hora =  horaFinal - horaInicial;
+      }else{
+          hora = 24+(horaInicial-horaFinal);
+        
+      }
+      
+
+        if(minutoInicial<minutoFinal){
+        minuto = minutoFinal - minutoInicial;
+      }else{
+        minuto = 60-(minutoInicial - minutoFinal);
+        hora--;
+      }
+
+      if(horaInicial==horaFinal && minutoInicial==minutoFinal){
+        hora = 24
+        minuto = 0;
+      }
+
+
+
+
+  return 'O JOGO DUROU '+hora+' HORA(S) E ' +minuto+ ' MINUTO(S)';
 }
