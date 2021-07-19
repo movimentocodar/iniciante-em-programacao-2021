@@ -12,8 +12,4 @@
  * Caso não seja um triângulo válido, deve retornar 'Invalido'.
  *
  */
-export default function qualTriangulo (lado1, lado2, lado3) {
-  // Implemente sua solução aqui :)
-  return `Valido-Tipo
-Retangulo: X`
-}
+

@@ -17,14 +17,15 @@
  * 0 nota(s) de R$ 2,00
  * 1 nota(s) de R$ 1,00
  */
-export default function cedulas (valor) {
-  // Implemente sua solução aqui :)
-  return `0
-0 nota(s) de R$ 100,00
-0 nota(s) de R$ 50,00
-0 nota(s) de R$ 20,00
-0 nota(s) de R$ 10,00
-0 nota(s) de R$ 5,00
-0 nota(s) de R$ 2,00
-0 nota(s) de R$ 1,00`
+
+let valor = parseInt(input);
+
+const notas = [100, 50, 20, 10, 5, 2, 1];
+
+console.log(valor);
+
+for (let nota of notas) {
+  let qtdNotas = parseInt(valor / nota);
+console.log($(qtdNotas))
+valor = valor % nota;
 }

@@ -21,7 +21,31 @@
  * - Se valor = 3002.00
  * - Deve retornar 'R$ 80.36' (8% sobre R$ 1000.00 + 18% sobre R$ 2.00. A faixa de 0 a 2000 é isenta)
  */
-export default function impostoRenda (valor) {
-  // Implemente sua solução aqui :)
-  return 'R$ 00.00'
+
+var salario;
+var imposto = 0;
+var diferenca;
+
+ function impostoRenda (valor) {
+  if(salario > 4500){
+    imposto = 1000 * (8.0 / 100) + 1500 *0.18;
+    diferenca = salario - 4500;
+    imposto += diferenca * 0.28;
+  }
+
+  else if(salario > 3000){
+    imposto = 1000 * 0.08;
+    diferenca = salario - 3000;
+    imposto += diferenca * 0,18;
+  }
+
+  else if(salario > 2000){
+    diferenca = salario - 2000;
+    imposto = diferenca * 0.08;
+  }
+
+  if(imposto > 0){
+    mostra($ + imposto);
+  }
+  
 }
