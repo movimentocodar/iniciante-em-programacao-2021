@@ -25,7 +25,28 @@
  * SEXTA
  * FALHA
  */
-export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
+export default function rodizioVeiculos(placas) {
+  let retorno = ''
+  for (let i = 0; i < placas.length; i++) {
+    if (placas[i].length == 8 && placas[i] == placas[i].toUpperCase()){
+      if (i > 0)retorno += '\n';
+      if (placas[i][7] == 1 || placas[i][7] == 2) {
+        retorno += 'SEGUNDA';
+      } else if (placas[i][7] == 3 || placas[i][7] == 4) {
+        retorno += 'TERÇA';
+      } else if (placas[i][7] == 5 || placas[i][7] == 6) {
+        retorno += 'QUARTA';
+      } else if (placas[i][7] == 7 || placas[i][7] == 8) {
+        retorno += 'QUINTA';
+      } else if (placas[i][7] == 9 || placas[i][7] == 0) {
+        retorno += 'SEXTA';
+      } else {
+        retorno += 'FALHA';
+      }
+    }else {
+      if (i > 0)retorno += '\n';
+      retorno += 'FALHA';
+    }
+  }
+  return retorno;
 }
