@@ -8,6 +8,40 @@
  * - Deve retornar 'O JOGO DUROU 2 HORA(S) E 2 MINUTO(S)'
  */
 export default function tempoDeJogo (horaInicial, minutoInicial, horaFinal, minutoFinal) {
-  // Implemente sua solução aqui :)
-  return 'O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)'
+
+function tempoDeJogo (horaInicial, minutoInicial, horaFinal, minutoFinal) {
+
+
+var inicioHora = horaInicial;
+var inicioMinuto = minutoInicial;
+
+
+var fimHora = horaFinal;
+var fimMinuto = minutoFinal;
+
+
+inicioMinuto = conversorMinutos(inicioMinuto);
+fimMinuto = conversorMinutos(fimMinuto);
+
+var calculoHoras = calculo(fimHora, inicioHora);
+var calculoMinutos = Math.round(calculo(fimMinuto, inicioMinuto) * 100);
+
+document.write("O JOGO DUROU " + calculoHoras + " HORA(S) E " + calculoMinutos + " MINUTO(S)")
+
+}
+
+
+
+tempoDeJogo(7, 8, 9, 10);
+
+//------------------------------------------------------------------------------------------//
+
+function conversorMinutos(tempo) {return tempo / 100}
+
+function calculo(nFinal, nInicio) {return nFinal - nInicio}
+
+
+//------------------------------------------------------------------------------------------//
+
+
 }

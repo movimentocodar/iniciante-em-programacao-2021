@@ -21,7 +21,43 @@
  * - Se valor = 3002.00
  * - Deve retornar 'R$ 80.36' (8% sobre R$ 1000.00 + 18% sobre R$ 2.00. A faixa de 0 a 2000 é isenta)
  */
+
 export default function impostoRenda (valor) {
-  // Implemente sua solução aqui :)
-  return 'R$ 00.00'
+
+  var salarioImposto = valor;
+  var imposto = [];
+
+  imposto = verifica(salarioImposto);
+  console.log(imposto)
+
+  return imposto;
 }
+
+impostoRenda(3002.00);
+
+
+//--------------------------------------------------------------------------------
+
+function verifica(salarioImposto) {
+
+  if(salarioImposto > 2000.00 && salarioImposto < 3000.00) {
+    return imposto = ((salarioImposto - 1000.00) * 8 / 100);
+    }
+
+  if(salarioImposto > 3000.00 && salarioImposto <= 4500.00) {
+    salarioImposto -= 3000.00;
+    soma1 = (2000.00 - 1000.00) * 8 / 100;
+    soma2 = salarioImposto * 18 / 100
+    return imposto = (soma1 + soma2);
+    }
+
+    if(salarioImposto > 4500.00) {
+    salarioImposto -= 4500.00;
+    soma1 = (2000.00 - 1000.00) * 8 / 100;
+    soma2 = 4500.00 / 18 / 100;
+    soma3 = salarioImposto * 28 / 100;
+    return imposto = (soma1 + soma2 + soma3);
+    }
+}
+
+//--------------------------------------------------------------------------------

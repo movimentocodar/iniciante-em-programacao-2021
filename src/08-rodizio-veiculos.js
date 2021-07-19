@@ -26,6 +26,40 @@
  * FALHA
  */
 export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
+  
+  var placa1 = placas[0];
+  var placa2 = placas[1];
+  var placa3 = placas[2];
+
+
+  verifica(placa1);
+  verifica(placa2);
+  verifica(placa3);
+
 }
+
+var placas = ["HEY-1234", "YOU-8356", "ABC-121"];
+rodizioVeiculos(placas);
+
+
+//------------------------------------------------------------------------------------------//
+
+function verifica(placa) {
+
+  console.log(placa)
+
+  if(placa.length == 8) {
+    placa = parseInt(placa[7])
+    console.log(placa)
+
+    if(placa == 1 || placa == 2) {return 'SEGUNDA'}
+    if(placa == 3 || placa == 4) {return 'TERÇA'}
+    if(placa == 5 || placa == 6) {return 'QUARTA'}
+    if(placa == 7 || placa == 8) {return 'QUINTA'}
+    if(placa == 9 || placa == 0) {return 'SEXTA'}
+  
+  } else {return 'INVÁLIDO'}
+}
+
+
+//------------------------------------------------------------------------------------------//
