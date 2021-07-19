@@ -11,6 +11,18 @@
  * - Deve retornar 'DCLXVI'
  */
 export default function numeracaoRomana (numero) {
-  // Implemente sua solução aqui :)
-  return 'I'
+
+    let result = []
+    let valor = 0
+    let vNumeros = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    let lRomanas = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+    
+    for (let i=0;i<vNumeros.length;i++) {
+        valor = parseInt(numero/vNumeros[i])
+            for(let j=0;j<valor;j++) {
+                result += lRomanas[i]
+            }
+        numero = numero%vNumeros[i]
+    }
+    return result
 }

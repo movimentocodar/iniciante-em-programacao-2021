@@ -8,6 +8,21 @@
  * - Deve retornar 'O JOGO DUROU 2 HORA(S) E 2 MINUTO(S)'
  */
 export default function tempoDeJogo (horaInicial, minutoInicial, horaFinal, minutoFinal) {
-  // Implemente sua solução aqui :)
-  return 'O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)'
+
+  let horas = horaFinal - horaInicial
+  let minutos = minutoFinal - minutoInicial
+
+  if (horaInicial == horaFinal && minutoInicial == minutoFinal) {
+    return "O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)"
+  }
+
+  if (horas < 0) {
+    horas += 24
+  }
+  if (minutos < 0) {
+    minutos += 60
+    horas -= 1
+  }
+
+  return `O JOGO DUROU ${horas} HORA(S) E ${minutos} MINUTO(S)`
 }

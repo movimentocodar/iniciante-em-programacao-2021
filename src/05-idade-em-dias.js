@@ -10,8 +10,26 @@
  * 5 dia(s)
  */
 export default function idadeEmDias (idade) {
-  // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+
+  let ano = 0
+  let mes = 0
+  let dias = 0
+
+  while (idade > 0) {
+    if (idade >= 365) {
+      idade -= 365
+      ano++
+    }
+    if (idade >= 30) {
+      idade -= 30
+      mes++
+    }
+    if (idade < 29) {
+      dias = idade
+      idade = 0
+    }
+  }
+  return `${ano} ano(s)\n${mes} mes(es)\n${dias} dia(s)`
 }
+
+idadeEmDias()

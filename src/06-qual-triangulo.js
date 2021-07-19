@@ -13,7 +13,18 @@
  *
  */
 export default function qualTriangulo (lado1, lado2, lado3) {
-  // Implemente sua solução aqui :)
-  return `Valido-Tipo
-Retangulo: X`
+
+    if(lado1 === lado2 && lado2 === lado3 && lado1 === lado3)
+      return 'Valido-Equilatero\nRetangulo: N'
+
+    if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3)
+      return 'Valido-Isoceles\nRetangulo: N'
+    
+    if (lado1 != lado2 && lado1 != lado3 && lado2 != lado3) {
+      if (lado1 > lado3)
+        return 'Invalido'
+
+      else
+      return 'Valido-Escaleno\nRetangulo: S'
+    }
 }
