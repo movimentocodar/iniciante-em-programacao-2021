@@ -12,6 +12,7 @@ Conteúdo adicional
 - [Git: Gerando uma chave ssh](https://docs.github.com/pt/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [Adicionando a chave ssh ao GitHub](https://docs.github.com/pt/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 - [Com usar Git e GitHub na prática](https://www.youtube.com/watch?v=UBAX-13g8OM)
+- [Curso de Lógica de Programação do Zero para Iniciantes](https://www.youtube.com/playlist?list=PLLaQioUGFzGMELNttW9gXP87WuoLjpozR) por [Cida Castello](https://github.com/cidacastello)
 
 ## Desafio
 
