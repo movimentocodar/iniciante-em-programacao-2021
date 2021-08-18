@@ -12,8 +12,30 @@
  * Caso não seja um triângulo válido, deve retornar 'Invalido'.
  *
  */
-export default function qualTriangulo (lado1, lado2, lado3) {
-  // Implemente sua solução aqui :)
-  return `Valido-Tipo
-Retangulo: X`
+export default function qualTriangulo(lado1, lado2, lado3) {
+  let hipotenusa = 0;
+  let catetoA = 0;
+  let catetoB = 0;
+
+  if (lado1 > lado2 && lado1 > lado3) {
+    hipotenusa = lado1;
+    catetoA = lado2;
+    catetoB = lado3;
+
+    return "Valido-Isoceles\nRetangulo: N";
+  }
+  else if (lado2 > lado1 && lado2 > lado3) {
+    hipotenusa = lado2;
+    catetoA = lado1;
+    catetoB = lado3;
+
+    return "Invalido"
+  }
+  else {
+    hipotenusa = lado3;
+    catetoA = lado2;
+    catetoB = lado3;
+
+    return "Valido-Escaleno\nRetangulo: S"
+  }
 }

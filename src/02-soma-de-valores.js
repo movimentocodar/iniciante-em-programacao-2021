@@ -6,7 +6,7 @@
  * - Dado a = 3 e b = 1
  * - O resultado retornado deve ser 'X = 4'
  */
-export default function somaValores (a, b) {
+export default function somaValores(a, b) {
   // Implemente sua solução aqui :)
-  return 'X = 0'
+  return 'X = ' + (a + b);
 }

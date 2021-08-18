@@ -9,7 +9,10 @@
  * - Dado o array `numeros` igual a  [1, 2, 3, 4, 10, 11]
  * - O resultado retornado deve ser 31
  */
-export default function somaSimplesArray (numeros) {
-  // Implemente sua solução aqui :)
-  return 0
+export default function somaSimplesArray(numeros) {
+  let soma = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    soma += numeros[i];
+  }
+  return soma;
 }
