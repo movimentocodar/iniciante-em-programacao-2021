@@ -10,8 +10,11 @@
  * 5 dia(s)
  */
 export default function idadeEmDias (idade) {
-  // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+  var anos = parseInt(idade / 365);
+  var meses = parseInt((idade - (anos * 365)) / 30);
+  var dias = parseInt((idade - (anos * 365) - (meses * 30)));;
+
+  return `${anos} ano(s)
+${meses} mes(es)
+${dias} dia(s)`
 }
