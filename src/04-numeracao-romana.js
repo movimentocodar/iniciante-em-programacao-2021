@@ -10,7 +10,45 @@
  * - Dado numero = 666
  * - Deve retornar 'DCLXVI'
  */
-export default function numeracaoRomana (numero) {
+export default function numeracaoRomana(numero) {
   // Implemente sua solução aqui :)
-  return 'I'
+  let romano = "";
+
+  while (numero > 0) {
+    if (numero > 0 && numero < 1000) {
+      if (numero >= 1000) {
+        romano += "M";
+        numero -= 1000;
+      } else if (numero >= 900 && numero < 1000) {
+        romano += "CM";
+        numero -= 900;
+      } else if (numero >= 500 && numero < 900) {
+        romano += "D";
+        numero -= 500;
+      } else if (numero >= 100 && numero < 500) {
+        romano += "C";
+        numero -= 100;
+      } else if (numero >= 90 && numero < 100) {
+        romano += "XC";
+        numero -= 90;
+      } else if (numero >= 50 && numero < 90) {
+        romano += "L";
+        numero -= 50;
+      } else if (numero >= 10 && numero < 50) {
+        romano += "X";
+        numero -= 10;
+      } else if (numero === 9) {
+        romano += "IX";
+        numero -= 9;
+      } else if (numero >= 5 && numero < 10) {
+        romano += "V";
+        numero -= 5;
+      } else if (numero >= 1 && numero < 5) {
+        romano += "I";
+        numero -= 1;
+      }
+    }
+  }
+
+  return romano;
 }
