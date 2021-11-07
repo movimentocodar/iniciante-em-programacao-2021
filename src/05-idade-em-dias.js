@@ -11,7 +11,12 @@
  */
 export default function idadeEmDias (idade) {
   // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+  
+  var ano = idade / 365;
+  var mes = (idade % 365) / 30;
+  var dia = (idade % 365) % 30;
+
+  return `${Math.floor(ano) + " ano(s)\n"}` +
+         `${Math.floor(mes) + " mes(es)\n"}`+
+         `${Math.floor(dia) + " dia(s)"}`;
 }
