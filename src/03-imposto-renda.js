@@ -23,5 +23,30 @@
  */
 export default function impostoRenda (valor) {
   // Implemente sua solução aqui :)
-  return 'R$ 00.00'
+  var imposto = 0;
+  var diferenca;
+
+  if ( valor <= 2000){
+    return "Isento";
+  } else if ( valor > 2000 && valor < 3000.01) {
+      imposto = valor - 2000;
+      imposto = (imposto.toFixed(2) * 8) / 100;    
+
+  } else if (valor > 3000 && valor <= 4500 ) {
+    
+    imposto = (((valor - 2000) - (valor - 3000))* 8) / 100 ;
+    diferenca = ((valor - 3000) * 18) / 100;
+    imposto  += diferenca;
+ 
+  
+} 
+
+else {
+
+  imposto = (1000 * 0.08) + (1500 * 0.18) ;
+  diferenca = valor - 4500;
+  imposto += diferenca * 0.28;
+
+}
+return  `R$ ${imposto.toFixed(2)}`;
 }
