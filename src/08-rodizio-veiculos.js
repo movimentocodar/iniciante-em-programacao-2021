@@ -25,7 +25,30 @@
  * SEXTA
  * FALHA
  */
-export default function rodizioVeiculos (placas) {
+export default function rodizioVeiculos(placas) {
   // Implemente sua solução aqui :)
-  return 'FALHA'
+  let dia = [];
+  let rodizio = /^[A-Z]{3}-[0-9]{4}\b/;
+
+  placas.forEach((placa) => {
+    if (rodizio.test(placa)) {
+      placa = placa.substring(7, 8).toString();
+
+      if (placa === "1" || placa.substring(7, 8) === "2") {
+        dia.push("SEGUNDA");
+      } else if (placa === "3" || placa === "4") {
+        dia.push("TERÇA");
+      } else if (placa === "5" || placa === "6") {
+        dia.push("QUARTA");
+      } else if (placa === "7" || placa === "8") {
+        dia.push("QUINTA");
+      } else if (placa === "9" || placa === "0") {
+        dia.push("SEXTA");
+      }
+    } else {
+      dia.push("FALHA");
+    }
+  });
+
+  return dia.join("\n");
 }
