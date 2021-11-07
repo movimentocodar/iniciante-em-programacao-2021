@@ -8,5 +8,6 @@
  */
 export default function somaValores (a, b) {
   // Implemente sua solução aqui :)
-  return 'X = 0'
+  let total = a + b;
+  return `X = ${total}`;
 }
