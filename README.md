@@ -68,3 +68,5 @@ Todos os exercícios são baseados no [URI Online Judge](https://www.urionlineju
 <a href="https://github.com/feehvecch"><img width="50" height="50" src="https://github.com/feehvecch.png"></img></a>
 <a href="https://github.com/lilianjaf"><img width="50" height="50" src="https://github.com/lilianjaf.png"></img></a>
 <a href="https://github.com/gabrieltrudes"><img width="50" height="50" src="https://github.com/gabrieltrudes.png"></img></a>
+<a href="https://github.com/hugoogle"><img width="50" height="50" src="https://github.com/hugoogle.png"></img></a>
+
