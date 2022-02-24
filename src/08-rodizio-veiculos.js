@@ -25,7 +25,18 @@
  * SEXTA
  * FALHA
  */
-export default function rodizioVeiculos (placas) {
-  // Implemente sua solução aqui :)
-  return 'FALHA'
-}
+export default function rodizioVeiculos (numeros) {
+ const placa = ['ABC-1234', 'XYZ-1010', 'AAA3333']
+ 
+ 
+ let index = 0
+ while (index < placa.length) {
+  console.log('${index+1}. ${placa[index]}') 
+	 
+	 
+ }
+ 
+
+
+  return placa;
+} 

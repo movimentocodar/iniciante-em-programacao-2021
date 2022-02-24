@@ -13,7 +13,8 @@
  *
  */
 export default function qualTriangulo (lado1, lado2, lado3) {
-  // Implemente sua solução aqui :)
+ Valido-Isoceles
+ Retangulo: N
   return `Valido-Tipo
 Retangulo: X`
 }

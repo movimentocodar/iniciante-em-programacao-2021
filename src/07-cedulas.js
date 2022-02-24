@@ -18,7 +18,8 @@
  * 1 nota(s) de R$ 1,00
  */
 export default function cedulas (valor) {
-  // Implemente sua solução aqui :)
+
+
   return `0
 0 nota(s) de R$ 100,00
 0 nota(s) de R$ 50,00
