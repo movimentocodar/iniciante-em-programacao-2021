@@ -11,7 +11,13 @@
  */
 export default function idadeEmDias (idade) {
   // Implemente sua solução aqui :)
-  return `X ano(s)
-X mes(es)
-X dia(s)`
+  let ano;
+  let mes;
+  let dia;
+
+  ano = idade / 365;
+  mes = (idade % 365) / 30;
+  dia = (idade % 365) % 30;
+
+  return `${parseInt(ano)} ano(s)\n${parseInt(mes)} mes(es)\n${parseInt(dia)} dia(s)`;
 }
