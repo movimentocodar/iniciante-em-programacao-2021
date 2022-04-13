@@ -11,5 +11,5 @@
  */
 export default function somaSimplesArray (numeros) {
   // Implemente sua solução aqui :)
-  return 0
+  return numeros.reduce((n1, n2) => n1 + n2);
 }

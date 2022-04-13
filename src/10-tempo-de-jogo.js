@@ -7,7 +7,16 @@
  * - Para horaInicial = 7, minutoInicial = 8, horaFinal = 9 e minutoFinal = 10
  * - Deve retornar 'O JOGO DUROU 2 HORA(S) E 2 MINUTO(S)'
  */
-export default function tempoDeJogo (horaInicial, minutoInicial, horaFinal, minutoFinal) {
+export default function tempoDeJogo(horaInicial, minutoInicial, horaFinal, minutoFinal) {
   // Implemente sua solução aqui :)
-  return 'O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)'
+
+  const totalEmMinutosInicial = (horaInicial * 60) + minutoInicial
+  const totalEmMinutosFinal = (horaFinal * 60) + minutoFinal
+
+  const quantidadeEmMinutosTotal = totalEmMinutosFinal - totalEmMinutosInicial
+
+  const quantidadeEmHoras = horaInicial === horaFinal ? 24 : Math.floor(quantidadeEmMinutosTotal / 60)
+  const quantidadeEmMinutos = quantidadeEmMinutosTotal % 60
+
+  return `O JOGO DUROU ${quantidadeEmHoras} HORA(S) E ${quantidadeEmMinutos} MINUTO(S)`
 }

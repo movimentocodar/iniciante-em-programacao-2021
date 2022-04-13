@@ -25,7 +25,36 @@
  * SEXTA
  * FALHA
  */
-export default function rodizioVeiculos (placas) {
+export default function rodizioVeiculos(placas) {
   // Implemente sua solução aqui :)
-  return 'FALHA'
+
+  const placaValidaRegExp = /^[A-Z]{3}-[0-9]{4}$/
+
+  const diasDeRodizio = placas.map(placa => {
+    if (!placa.match(placaValidaRegExp)) {
+      return 'FALHA'
+    }
+
+    const finalDaPlaca = placa[placa.length - 1]
+
+    if (finalDaPlaca == 0 || finalDaPlaca == 9) {
+      return 'SEXTA'
+    }
+
+    if (finalDaPlaca > 6) {
+      return 'QUINTA'
+    }
+
+    if (finalDaPlaca > 4) {
+      return 'QUARTA'
+    }
+
+    if (finalDaPlaca > 2) {
+      return 'TERÇA'
+    }
+
+    return 'SEGUNDA'
+  });
+
+  return diasDeRodizio.join('\n')
 }

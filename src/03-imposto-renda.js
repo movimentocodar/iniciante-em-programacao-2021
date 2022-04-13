@@ -21,7 +21,37 @@
  * - Se valor = 3002.00
  * - Deve retornar 'R$ 80.36' (8% sobre R$ 1000.00 + 18% sobre R$ 2.00. A faixa de 0 a 2000 é isenta)
  */
-export default function impostoRenda (valor) {
+export default function impostoRenda(valor) {
   // Implemente sua solução aqui :)
-  return 'R$ 00.00'
+
+  if (valor <= 2000) {
+    return 'Isento'
+  }
+
+  const inicioSegundaFaixa = 2000.01
+  const limiteSegundaFaixa = 3000
+  const taxaSegundaFaixa = 0.08
+
+  let impostos = 0
+
+  if (valor <= limiteSegundaFaixa) {
+    impostos += (valor - inicioSegundaFaixa) * taxaSegundaFaixa
+  } else {
+    const inicioTerceiraFaixa = 3000.01
+    const taxaTerceiraFaixa = 0.18
+
+    const inicioUltimaFaixa = 4500
+    const taxaUltimaFaixa = 0.28
+    
+    impostos += (limiteSegundaFaixa - inicioSegundaFaixa) * taxaSegundaFaixa
+
+    if (valor <= inicioUltimaFaixa) {
+      impostos += (valor - inicioTerceiraFaixa) * taxaTerceiraFaixa
+    } else {
+      impostos += (valor - inicioUltimaFaixa) * taxaUltimaFaixa
+      impostos += (inicioUltimaFaixa - inicioTerceiraFaixa) * taxaTerceiraFaixa
+    }
+  }
+
+  return `R$ ${(Math.round((impostos + Number.EPSILON) * 100) / 100).toFixed(2)}`
 }

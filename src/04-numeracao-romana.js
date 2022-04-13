@@ -10,7 +10,33 @@
  * - Dado numero = 666
  * - Deve retornar 'DCLXVI'
  */
-export default function numeracaoRomana (numero) {
+export default function numeracaoRomana(numero) {
   // Implemente sua solução aqui :)
-  return 'I'
+
+  const conversaoUnidade = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+  const conversaoDezena = ['X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC', 'C']
+  const conversaoCentena = ['C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM', 'M']
+
+  const numeroEmString = `${numero}`
+
+  let casas = numeroEmString.length
+  let resultado = ''
+
+  let i = 0
+  while (casas > 0) {
+
+    let numeroNaIteracao = numeroEmString[i++]
+
+    if (casas === 3) {
+      resultado += conversaoCentena[numeroNaIteracao - 1]
+    } else if (casas === 2) {
+      resultado += conversaoDezena[numeroNaIteracao - 1]
+    } else {
+      resultado += conversaoUnidade[numeroNaIteracao - 1]
+    }
+
+    casas--
+  }
+
+  return resultado
 }
